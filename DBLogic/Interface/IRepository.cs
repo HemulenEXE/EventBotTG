@@ -9,19 +9,22 @@ namespace EventBotTG.DBLogic.Interface
 {
     public interface IRepository
     {
-        public void AddAccount(AccountTG accountTG);
-        public void GetAccount(int idAccount);
-
+        public int AddAccount(AccountTG accountTG);
+        public AccountTG GetAccount(int idAccount);
         public List<AccountTG> GetListAccount(int idAccount);
+        public int UpdateAccount(AccountTG accountTG);
+        public int DeleteAccount(int idAccount);
 
-        public void UpdateAccount(AccountTG accountTG);
+        public int AddNumber(int idAccount, PhoneNumber phoneNumber);
+        public PhoneNumber GetNumber(int idNumber);
+        public List<PhoneNumber> GetNumbersUser(int idAccount);
+        public int UpdateNumber(int idNumber, PhoneNumber number);
+        public int DeleteNumber(int idNumber);
 
-        public void DeleteAccount(int idAccount);
-
-        public void AddNumber(int idAccount, PhoneNumber phoneNumber);
-
-        public void UpdateNumber(int idNumber, string number);
-
-        public void DeleteNumber(int idNumber);
+        public int AddMail(int idAccount, Mail mail);
+        public Mail GetMail(int idMail);
+        public List<Mail> GetMailsUser(int idAccount);
+        public int UpdateMail(int idMail, Mail mail);
+        public int DeleteNumber(int idMail);
     }
 }

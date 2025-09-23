@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EventBotTG.DBLogic.Entity
+namespace EventBotTG.DBLogic.Entity : AbstractTypeCommunity
 {
     public class AccountTG
     {
@@ -13,6 +13,11 @@ namespace EventBotTG.DBLogic.Entity
             tagName = tName;
             uuidChat = uChat;
             uUser = uUser;
+        }
+
+        public override string GetDataConnect()
+        {
+            return uuidUser;
         }
         
         int idAccount;

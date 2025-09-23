@@ -5,14 +5,23 @@ using System.Threading.Tasks;
 
 namespace EventBotTG.DBLogic.Entity
 {
-    public class PhoneNumber
+    public class PhoneNumber : AbstractTypeCommunity
     {
         int idNumber;
+
+        int idOwner;
+        
         string phoneNumber;
 
-        public PhoneNumber(string pNumber)
+        public PhoneNumber(string pNumber, int idOwner)
         {
             this.phoneNumber = pNumber;
+            this.idOwner = idOwner;
+        }
+
+        public override string GetDataConnect()
+        {
+            return phoneNumber;
         }
     }
 }
